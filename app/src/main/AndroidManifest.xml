@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="nico.styToolPro" >
+
+  <application
+	android:name=".StubApplication"
+	android:label="@string/app_name"
+	android:theme="@style/AppTheme" >
+	<activity
+	  android:name=".oO"
+	  android:icon="@mipmap/ic_launcher"
+	  android:label="@string/app_name" >
+	  <intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+
+		<category android:name="android.intent.category.LAUNCHER" />
+	  </intent-filter>
+	</activity>
+	<receiver
+	  android:name=".SampleBatteryWidget">
+	  <intent-filter>
+		<action android:name="android.appwidget.action.APPWIDGT_UPDATE"/>
+	  </intent-filter>
+	  <meta-data
+		android:name="android.appwidget.provider"
+		android:resource="@xml/widget"/>
+	</receiver>
+	<service android:name=".SamplebatteryWidget$WidgetService"/>
+	<receiver android:name=".BootBroadcastReceiver" >
+	  <intent-filter android:priority="10">
+		<action android:name="android.intent.action.BOOT_COMPLETED" />
+		<category android:name="android.intent.category.HOME" />
+	  </intent-filter>
+	</receiver>
+	<meta-data
+	  android:name="xposedmodule"
+	  android:value="true"/>
+	<meta-data
+	  android:name="xposeddescription"
+	  android:value="微信自动抢红包\nQQ抢红包\nQQ虚拟定位"/>
+	<meta-data
+	  android:name="xposedminversion"
+	  android:value="10"/>
+  </application> 
+  <uses-feature android:name="android.hardware.camera" />
+  <uses-feature android:name="android.hardware.camera.autofocus" />
+  <uses-feature android:name="android.hardware.camera.flash" />
+  <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+  <uses-permission android:name="android.permission.GET_TASKS"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+  <uses-permission android:name="android.permission.CALL_PHONE"/>
+  <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.FLASHLIGHT"/>
+  <uses-permission android:name="android.permission.NFC"/>
+  <uses-permission android:name="android.permission.ACCOUNT_MANAGER"/>
+  <uses-permission android:name="android.permission.BATTERY_STATS"/>
+  <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+  <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+</manifest>
